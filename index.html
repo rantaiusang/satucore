@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Aurora Parfum | Link-in-Bio</title>
-    <meta name="description" content="Kumpulan link resmi Aurora Parfum.">
+    <title>My Hub | All Projects & Links</title>
+    <meta name="description" content="Pusat link semua proyek dan brand saya.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,15 +19,15 @@
         :root {
             --bg-dark: #020617;
             --bg-card: rgba(15, 23, 42, 0.6);
-            --bg-card-hover: rgba(30, 41, 59, 0.9);
+            --bg-card-hover: rgba(30, 41, 59, 0.8);
             
-            /* Warna Brand (Ungu & Emas) */
-            --primary: #a855f7; 
-            --accent: #fbbf24;
+            /* Warna Teknologi (Biru & Hijau dari template asli) */
+            --primary: #0ea5e9; 
+            --accent: #10b981; 
             
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
+            --border: rgba(255, 255, 255, 0.08);
         }
 
         /* --- RESET --- */
@@ -41,9 +41,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Background Gradient Halus */
+            /* Background Tech Pattern */
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.15), transparent 40%),
+                radial-gradient(circle at 0% 0%, rgba(14, 165, 233, 0.15), transparent 40%),
                 linear-gradient(to bottom, #020617, #0f172a);
             padding: 40px 20px 60px 20px;
         }
@@ -53,11 +53,10 @@
         /* --- CONTAINER --- */
         .container {
             width: 100%;
-            max-width: 480px; /* Lebar standar bio-link */
+            max-width: 600px; /* Sedikit lebih lebar untuk menampung teks */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            gap: 24px;
             z-index: 1;
         }
 
@@ -66,13 +65,12 @@
             text-align: center;
             margin-bottom: 10px;
             animation: fadeInDown 0.8s ease-out;
-            width: 100%;
         }
 
         .avatar-wrapper {
             position: relative;
-            width: 96px;
-            height: 96px;
+            width: 90px;
+            height: 90px;
             margin: 0 auto 16px;
         }
 
@@ -81,149 +79,123 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid rgba(168, 85, 247, 0.3);
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+            border: 2px solid rgba(14, 165, 233, 0.6);
+            box-shadow: 0 0 25px rgba(14, 165, 233, 0.3);
         }
 
-        .verified-badge {
+        .status-dot {
             position: absolute;
-            bottom: 2px;
-            right: 2px;
-            background: var(--bg-dark);
-            border: 2px solid var(--accent);
-            color: var(--accent);
+            bottom: 4px;
+            right: 4px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border: 2px solid var(--bg-dark);
             border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
         }
 
-        .profile-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.5px; }
-        .profile-bio { color: var(--text-muted); font-size: 0.9rem; line-height: 1.4; padding: 0 10px; }
+        .profile-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.5px; }
+        .profile-role { font-size: 0.8rem; color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block; }
+        .profile-bio { color: var(--text-muted); font-size: 0.85rem; max-width: 400px; margin: 0 auto; line-height: 1.5; }
 
-        /* --- SOCIAL ICONS (KECIL DI BAWAH NAMA) --- */
-        .socials-header {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
+        /* --- CATEGORY HEADERS --- */
+        .category-header {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-top: 10px;
             margin-bottom: 10px;
+            padding-left: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
         }
-        .social-icon-link {
-            color: var(--text-muted);
-            font-size: 24px;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .social-icon-link:hover { color: var(--primary); transform: translateY(-2px); }
+        .category-header i { color: var(--accent); font-size: 14px; }
 
-        /* --- LINK BUTTONS (INTI DARI LYNK.ID) --- */
+        /* --- LINK CARDS (MULTIPURPOSE) --- */
         .links-wrapper {
-            width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-        }
-
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Icon kiri, Teks Tengah, Panah Kanan */
-            width: 100%;
-            padding: 16px 20px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 50px; /* Sangat bulat seperti Lynk.id */
-            text-decoration: none;
-            color: var(--text-main);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 0.5s ease-out backwards;
-        }
-
-        /* Hover Effect: Sedikit terangkat dan border menyala */
-        .link-btn:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--primary);
-            transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-content {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            flex: 1;
-        }
-
-        .btn-icon {
-            font-size: 22px;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-        }
-
-        .btn-text {
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .btn-arrow {
-            font-size: 18px;
-            color: var(--text-muted);
-            transition: 0.3s;
-        }
-        .link-btn:hover .btn-arrow { color: var(--text-main); transform: translateX(4px); }
-        .link-btn:hover .btn-icon { color: var(--accent); }
-
-        /* --- VARIAN TOMBOL KHUSUS --- */
-
-        /* 1. Tombol Utama (Lebih menonjol) */
-        .link-btn.featured {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.05));
-            border-color: rgba(168, 85, 247, 0.5);
-        }
-        .link-btn.featured .btn-text { font-weight: 700; color: #fff; }
-        .link-btn.featured:hover {
-            background: var(--primary);
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-        }
-        .link-btn.featured:hover .btn-text, 
-        .link-btn.featured:hover .btn-icon,
-        .link-btn.featured:hover .btn-arrow { color: #fff; }
-
-        /* 2. Tombol Grid (Untuk Kategori Produk) */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* 2 Kolom */
-            gap: 12px;
-            width: 100%;
-        }
-        .link-btn.grid-item {
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            padding: 20px 10px;
             gap: 10px;
         }
-        .link-btn.grid-item .btn-content {
-            flex-direction: column;
-            gap: 8px;
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            animation: fadeInUp 0.5s ease-out backwards;
+            position: relative;
         }
-        .link-btn.grid-item .btn-icon { font-size: 28px; }
-        .link-btn.grid-item .btn-arrow { display: none; }
+
+        .link-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary);
+            transform: translateX(6px); /* Efek geser ke kanan */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .link-left { display: flex; align-items: center; gap: 14px; }
+        
+        .link-icon { 
+            font-size: 24px; 
+            color: var(--primary); 
+            min-width: 32px; 
+            display: flex; 
+            justify-content: center;
+        }
+
+        .link-content { flex: 1; }
+        .link-title { font-size: 0.95rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 2px; }
+        .link-desc { font-size: 0.75rem; color: var(--text-muted); display: block; }
+
+        .link-action { font-size: 18px; color: var(--text-muted); transition: 0.3s; }
+        .link-card:hover .link-action { color: var(--primary); transform: translateX(3px); }
+
+        /* --- TAG STYLE (Untuk Label Kecil di kartu) --- */
+        .tag {
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            margin-left: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .tag.new { background: rgba(16, 185, 129, 0.2); color: var(--accent); border-color: rgba(16, 185, 129, 0.2); }
+        .tag.hot { background: rgba(239, 68, 68, 0.2); color: #ef4444; border-color: rgba(239, 68, 68, 0.2); }
+
+        /* --- VARIAN KHUSUS (Sesuai kebutuhan Project) --- */
+        
+        /* 1. Card untuk E-Commerce (Warna sedikit berbeda) */
+        .card-ecommerce { border-left: 3px solid var(--accent); }
+        .card-ecommerce .link-icon { color: var(--accent); }
+
+        /* 2. Card untuk Portfolio/Project */
+        .card-project { border-left: 3px solid var(--primary); }
+
+        /* 3. Card untuk Tools/Utility */
+        .card-tool { border-left: 3px solid #f59e0b; }
+        .card-tool .link-icon { color: #f59e0b; }
 
         /* --- FOOTER --- */
         .footer {
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
             font-size: 0.75rem;
             color: var(--text-muted);
+            padding-bottom: 20px;
         }
 
         /* --- ANIMATIONS --- */
@@ -235,93 +207,153 @@
 <body>
 
     <div class="container">
-        <!-- PROFILE HEADER -->
+        <!-- HEADER PROFIL -->
         <header class="profile-header">
             <div class="avatar-wrapper">
-                <!-- GANTI DENGAN LOGO ANDA -->
-                <img src="https://picsum.photos/seed/perfumeLogo/200/200" alt="Logo" class="avatar">
-                <div class="verified-badge"><i class="ph ph-check"></i></div>
+                <!-- Ganti Foto Profil -->
+                <img src="https://picsum.photos/seed/userProfile/200/200" alt="Profile" class="avatar">
+                <div class="status-dot"></div>
             </div>
-            <h1 class="profile-name">Aurora Parfum</h1>
-            <p class="profile-bio">Koleksi parfum premium untuk pria & wanita. Tahan lama dan berkualitas.</p>
-            
-            <!-- Sosial Media Kecil -->
-            <div class="socials-header">
-                <a href="https://instagram.com" class="social-icon-link"><i class="ph ph-instagram-logo"></i></a>
-                <a href="https://tiktok.com" class="social-icon-link"><i class="ph ph-tiktok-logo"></i></a>
-                <a href="https://wa.me/6281234567890" class="social-icon-link"><i class="ph ph-whatsapp-logo"></i></a>
-            </div>
+            <h1 class="profile-name">Creative Hub</h1>
+            <span class="profile-role">Developer • Creator • Entrepreneur</span>
+            <p class="profile-bio">Selamat datang di pusat kendali digital saya. Jelajahi proyek, toko, dan eksperimen teknologi terbaru.</p>
         </header>
 
-        <!-- AREA LINK UTAMA -->
+        <!-- KATEGORI 1: STORE & BRAND (TOKO) -->
+        <div class="category-header">
+            <i class="ph ph-storefront"></i> Official Stores & Brand
+        </div>
         <div class="links-wrapper">
+            <!-- Link 1: Shopee Utama -->
+            <a href="https://shopee.co.id" target="_blank" class="link-card card-ecommerce" style="animation-delay: 0.1s;">
+                <div class="link-left">
+                    <i class="ph ph-shopping-bag link-icon"></i>
+                    <div class="link-content">
+                        <span class="link-title">Aurora Parfum Official</span>
+                        <span class="link-desc">Toko Parfum Utama di Shopee</span>
+                    </div>
+                </div>
+                <i class="ph ph-arrow-up-right link-action"></i>
+            </a>
+
+            <!-- Link 2: Tokopedia -->
+            <a href="https://tokopedia.com" target="_blank" class="link-card card-ecommerce" style="animation-delay: 0.2s;">
+                <div class="link-left">
+                    <i class="ph ph-storefront link-icon"></i>
+                    <div class="link-content">
+                        <span class="link-title">Gadget Tech Store</span>
+                        <span class="link-desc">Aksesoris & Elektronik di Tokopedia</span>
+                    </div>
+                </div>
+                <i class="ph ph-arrow-up-right link-action"></i>
+            </a>
+        </div>
+
+        <!-- KATEGORI 2: ACTIVE PROJECTS (PROYEK AKTIF) -->
+        <div class="category-header">
+            <i class="ph ph-rocket-launch"></i> Active Projects
+        </div>
+        <div class="links-wrapper">
+            <!-- Project 1 -->
+            <a href="#" target="_blank" class="link-card card-project" style="animation-delay: 0.3s;">
+                <div class="link-left">
+                    <i class="ph ph-plant link-icon"></i>
+                    <div class="link-content">
+                        <span class="link-title">Smart Farming Ngebel <span class="tag new">New</span></span>
+                        <span class="link-desc">Sistem Monitoring IoT Pertanian</span>
+                    </div>
+                </div>
+                <i class="ph ph-arrow-up-right link-action"></i>
+            </a>
+
+            <!-- Project 2 -->
+            <a href="#" target="_blank" class="link-card card-project" style="animation-delay: 0.4s;">
+                <div class="link-left">
+                    <i class="ph ph-code link-icon"></i>
+                    <div class="link-content">
+                        <span class="link-title">SaaS Dashboard Kit</span>
+                        <span class="link-desc">Template UI untuk Developer</span>
+                    </div>
+                </div>
+                <i class="ph ph-arrow-up-right link-action"></i>
+            </a>
+
+             <!-- Project 3 -->
+             <a href="#" target="_blank" class="link-card card-project" style="animation-delay: 0.5s;">
+                <div class="link-left">
+                    <i class="ph ph-paint-brush link-icon"></i>
+                    <div class="link-content">
+                        <span class="link-title">Design Portfolio <span class="tag hot">Hot</span></span>
+                        <span class="link-desc">Galeri karya desain grafis</span>
+                    </div>
+                </div>
+                <i class="ph ph-arrow-up-right link-action"></i>
+            </a>
+        </div>
+
+        <!-- KATEGORI 3: TOOLS & RESOURCES (ALAT BANTU) -->
+        <div class="category-header">
+            <i class="ph ph-wrench"></i> Tools & Resources
+        </div>
+        <div class="links-wrapper">
+            <!-- Tool 1 -->
+            <a href="#" target="_blank" class="link-card card-tool" style="animation-delay: 0.6s;">
+                <div class="link-left">
+                    <i class="ph ph-calculator link-icon"></i>
+                    <div class="link-content">
+                        <span class="link-title">Kalkulator Margin</span>
+                        <span class="link-desc">Hitung keuntungan jualan cepat</span>
+                    </div>
+                </div>
+                <i class="ph ph-arrow-up-right link-action"></i>
+            </a>
+
+            <!-- Tool 2 -->
+            <a href="#" target="_blank" class="link-card card-tool" style="animation-delay: 0.7s;">
+                <div class="link-left">
+                    <i class="ph ph-file-text link-icon"></i>
+                    <div class="link-content">
+                        <span class="link-title">Invoice Generator</span>
+                        <span class="link-desc">Buat tagihan PDF gratis</span>
+                    </div>
+                </div>
+                <i class="ph ph-arrow-up-right link-action"></i>
+            </a>
+        </div>
+
+        <!-- KATEGORI 4: SOCIAL & CONTACT (HUBUNGI) -->
+        <div class="category-header" style="margin-top: 20px;">
+            <i class="ph ph-chat-circle-text"></i> Connect
+        </div>
+        <div class="links-wrapper">
+            <a href="https://wa.me/628123456789" target="_blank" class="link-card" style="animation-delay: 0.8s;">
+                <div class="link-left">
+                    <i class="ph ph-whatsapp-logo link-icon" style="color: #25D366;"></i>
+                    <div class="link-content">
+                        <span class="link-title">WhatsApp Personal</span>
+                        <span class="link-desc">Respon cepat jam kerja</span>
+                    </div>
+                </div>
+                <i class="ph ph-arrow-up-right link-action"></i>
+            </a>
             
-            <!-- Link Featured (Paling Penting) -->
-            <!-- Ganti href dengan link Toko Utama -->
-            <a href="https://shopee.co.id/tokosaya" target="_blank" class="link-btn featured" style="animation-delay: 0.1s;">
-                <div class="btn-content">
-                    <i class="ph ph-shopping-bag btn-icon"></i>
-                    <span class="btn-text">Official Store (Shopee)</span>
+            <a href="https://linkedin.com" target="_blank" class="link-card" style="animation-delay: 0.9s;">
+                <div class="link-left">
+                    <i class="ph ph-linkedin-logo link-icon" style="color: #0077b5;"></i>
+                    <div class="link-content">
+                        <span class="link-title">LinkedIn Professional</span>
+                        <span class="link-desc">Profil karir & sertifikasi</span>
+                    </div>
                 </div>
-                <i class="ph ph-arrow-right btn-arrow"></i>
-            </a>
-
-            <a href="https://tokopedia.com/tokosaya" target="_blank" class="link-btn" style="animation-delay: 0.2s;">
-                <div class="btn-content">
-                    <i class="ph ph-storefront btn-icon"></i>
-                    <span class="btn-text">Tokopedia Official</span>
-                </div>
-                <i class="ph ph-arrow-right btn-arrow"></i>
-            </a>
-
-            <a href="https://websiteproduk.com" target="_blank" class="link-btn" style="animation-delay: 0.3s;">
-                <div class="btn-content">
-                    <i class="ph ph-globe btn-icon"></i>
-                    <span class="btn-text">Website Katalog</span>
-                </div>
-                <i class="ph ph-arrow-right btn-arrow"></i>
-            </a>
-        </div>
-
-        <!-- GRID KATEGORI (Opsional, untuk mempercepat akses produk) -->
-        <div class="grid-container" style="margin-top: 10px;">
-            <a href="#pria" class="link-btn grid-item" style="animation-delay: 0.4s;">
-                <div class="btn-content">
-                    <i class="ph ph-gender-male btn-icon"></i>
-                    <span class="btn-text">Parfum Pria</span>
-                </div>
-            </a>
-            <a href="#wanita" class="link-btn grid-item" style="animation-delay: 0.5s;">
-                <div class="btn-content">
-                    <i class="ph ph-gender-female btn-icon"></i>
-                    <span class="btn-text">Parfum Wanita</span>
-                </div>
-            </a>
-        </div>
-
-        <!-- LINK LAINNYA -->
-        <div class="links-wrapper" style="margin-top: 10px;">
-            <a href="https://wa.me/6281234567890?text=Halo%20mau%20tanya%20stok" target="_blank" class="link-btn" style="animation-delay: 0.6s;">
-                <div class="btn-content">
-                    <i class="ph ph-whatsapp-logo btn-icon" style="color: #25D366;"></i>
-                    <span class="btn-text">Chat Admin (WA)</span>
-                </div>
-                <i class="ph ph-arrow-right btn-arrow"></i>
-            </a>
-
-            <a href="#" class="link-btn" style="animation-delay: 0.7s;">
-                <div class="btn-content">
-                    <i class="ph ph-star btn-icon" style="color: var(--accent);"></i>
-                    <span class="btn-text">Review Pelanggan</span>
-                </div>
-                <i class="ph ph-arrow-right btn-arrow"></i>
+                <i class="ph ph-arrow-up-right link-action"></i>
             </a>
         </div>
 
         <!-- FOOTER -->
         <footer class="footer">
-            <p>© 2024 Aurora Parfum. All rights reserved.</p>
+            <p>© 2024 Creative Hub. Manage your links efficiently.</p>
         </footer>
+
     </div>
 
 </body>
